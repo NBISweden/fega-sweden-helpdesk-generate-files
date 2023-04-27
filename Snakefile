@@ -21,8 +21,6 @@ if config["prefix"] is None:
 else:
     prefix = config["prefix"]
 
-print("**** ", config["prefix"], " ****")
-
 assert config["numFiles"] <= 100000
 seq_ids = [prefix + str(_).zfill(5) for _ in range(config["numFiles"])]
 
