@@ -1,6 +1,5 @@
 """Create fastq files with unique names and unique content."""
 
-
 from datetime import datetime
 
 
@@ -11,7 +10,7 @@ def generate_fastq_str(seq_id):
         f"@{seq_id}\n"
         f"GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT\n"
         f"+\n"
-        "!''*((((***+))%%%++)(%%%%).1***-+*''))**55CCF>>>>>>CCCCCCC65\n"
+        f"!''*((((***+))%%%++)(%%%%).1***-+*''))**55CCF>>>>>>CCCCCCC65\n"
     )
     return fastq
 
