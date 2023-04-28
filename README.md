@@ -39,3 +39,13 @@ sequence identifiers:
 ```
 snakemake -c 1 --config prefix="submission1_" numFiles=20
 ```
+
+
+## Post processing
+
+If you want to compress each file separately, you can run the following
+command:
+
+```
+find . -type f -execdir tar -zcvf '{}.tar.gz' '{}' \;
+```
