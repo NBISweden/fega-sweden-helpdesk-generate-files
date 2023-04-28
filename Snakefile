@@ -5,7 +5,7 @@ from datetime import datetime
 
 configfile: "config.yaml"
 
-def generate_fastq_str(seq_id):
+def fastq_as_str(seq_id):
     fastq = (
         f"@{seq_id}\n"
         f"GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT\n"
@@ -31,4 +31,4 @@ rule generate_fastq:
     output: "output/{seq_id}.fastq"
     run:
         with open(output[0], "w") as out:
-            out.write(generate_fastq_str(wildcards.seq_id))
+            out.write(fastq_as_str(wildcards.seq_id))
