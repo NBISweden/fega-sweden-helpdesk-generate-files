@@ -26,15 +26,14 @@ snakemake -c 1
 
 Output files will be stored in a folder named `output/`.
 
-If you want to generate for example 20 files, you can enter the following 
+To generate let say 20 files, you could enter the following 
 command:
 
 ```
 snakemake -c 1 --config numFiles=20
 ```
 
-You can also provide a custom prefix to be used in filenames and
-sequence identifiers:
+A timestamp will be prefixed to the resulting file names and sequence identifiers by default. If you wishm you can provide a custom prefix instead:
 
 ```
 snakemake -c 1 --config prefix="submission1_" numFiles=20
@@ -44,7 +43,7 @@ snakemake -c 1 --config prefix="submission1_" numFiles=20
 ## Post processing
 
 If you want to compress each file separately, you can run the following
-command:
+command inside the `output/` folder:
 
 ```
 find . -type f -execdir tar -zcvf '{}.tar.gz' '{}' \;
